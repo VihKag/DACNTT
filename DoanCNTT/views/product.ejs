@@ -1,0 +1,178 @@
+ <!-- trang của từng quyển sách -->
+ <div class="container-item">   
+    <!-- breadcum============================================= --> 
+    <nav class="nav-breadcrumb" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" color="white">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a class="breadcrumb-item" href="/">Trang chủ</a></li>
+        <li class="breadcrumb-item"><a class="breadcrumb-item" href="/collections">Danh mục</a></li>
+        <li class="breadcrumb-item"><a class="breadcrumb-item" href="#">Sản phẩm</a></li>
+      </ol>
+    </nav>
+    <div class="product-esstential">
+      <% books.forEach(function(books){ %>
+      <figure class="figure">
+        <img id="product-img" src="<%= books.img %>"
+          class="figure-img img-fluid rounded" alt="...">
+      </figure>
+
+      <div class="product-detail">
+        <div id="product-name" class="product-name"></div>
+        
+        <ul class="product-detail-list">
+          <li id="auth-name" class="auth-name">Tác giả: <%= books.tacgia %></li>
+          <li  class="product-publih">Nhà xuất bản:
+            <a id="product-publish" href="#"> <%= books.nxb %></a>
+          </li>
+          <li id="age" >Độ tuổi: <%= books.luatuoi %></li>
+          <li id="product-pages">Số trang: <%= books.sotrang %></li>
+        </ul>
+        <div class="product-price" style="font-size:x-large !important;">Giá tiền: <span id="product-pri"><%= books.giatien %></span>đ</div>
+        <%}); %>
+        <div class="info-refund">Đổi trả sản phẩm trong vòng 7 ngày</div>
+        <div class="wrap-product-quantity" style="display:flex">
+          <span style="font-size: 1.5rem; font-weight: bold;">Số lượng </span>
+          <div class="btn-add">
+            <button onclick="handlePlus()"><img
+                src="https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/ico_plus2x.png" alt=""></button>
+          </div>         
+          <input type="text" id="qty" name="qty" value="1">
+          <div class="btn-subtract">
+            <button onclick="handleSub()"><img
+                src="https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/ico_minus2x.png" alt=""></button>
+          </div>
+        </div>
+        <div class="wrap-btn">
+          <button onclick="themvaogiohang()" class="item-btn cursor">Thêm vào giỏ hàng</button>
+          <a href="/cart">
+            <button class="item-btn cursor">Mua ngay</button>
+          </a>
+        </div>
+      </div>
+      <div class="line-divide"></div>
+      <div class="wrap-product-relative">
+        <h3 class="title-relative-book">Sách đề cử</h3>
+        <div class="wrap-relative-book">
+          <div class="relative-book">
+            <div class="book cursor" style="margin-bottom: 20px;">
+              <img src="https://cdn0.fahasa.com/media/catalog/product/i/m/image_195509_1_554.jpg" class="img-relative-book" alt="...">
+              <h4 class="book-item">How Money Works - Hiểu Hết Về Tiền</h4>
+              <h5 class="book-item product-price">255000đ</h5>
+            </div>
+            <div class="book cursor">
+              <img src="https://cdn0.fahasa.com/media/catalog/product/b/i/bia1_luttttttttttattamthuc_1.jpg" class="img-relative-book" alt="...">
+              <h4 class="book-item">Luật Tâm Thức - Giải Mã Ma Trận Vũ Trụ</h4>
+              <h5 class="book-item product-price">320000</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>   
+  </div>
+
+  <!-- Phần bình luận -->
+  <div class="container-item">
+    <div class="container-review ">
+      <h2 class="review-title">Đánh giá sản phẩm</h2>
+      <div class="review-form">
+        <div class="row">
+          <div class="col">
+            <h3 class="form-item">Tên</h3>
+            <input type="text" class="form-control" placeholder="Name" aria-label="Name">
+          </div>
+          <div class="col">
+            <h3 class="form-item">Email</h3>
+            <input type="email" class="form-control" placeholder="example@example.com" aria-label="email">
+          </div>
+          <div class="col">
+            <h3 class="form-item">Số điện thoại</h3>
+            <input type="text" class="form-control" placeholder="Phone number" aria-label="Phone number">
+          </div>
+        </div>
+      </div>
+      <h4 class="review-title">Đánh giá</h4>
+      <div class="stars">
+        <form action="">
+          <input class="star star-5" id="star-5" type="radio" name="star"/>
+          <label class="star star-5" for="star-5"></label>
+          <input class="star star-4" id="star-4" type="radio" name="star"/>
+          <label class="star star-4" for="star-4"></label>
+          <input class="star star-3" id="star-3" type="radio" name="star"/>
+          <label class="star star-3" for="star-3"></label>
+          <input class="star star-2" id="star-2" type="radio" name="star"/>
+          <label class="star star-2" for="star-2"></label>
+          <input class="star star-1" id="star-1" type="radio" name="star"/>
+          <label class="star star-1" for="star-1"></label>
+        </form>
+      </div>
+      <div class="review-body">
+        <div class="review-body-heading">
+          <h3 class="form-item">Tiêu đề</h3>
+          <input type="text" class="form-control" placeholder="Tiêu đề" aria-label="Số điện thoại">
+        </div>
+        <div class="review-body-content">
+          <h3 class="form-item">Nội dung</h3>
+          <textarea type="text" class="form-control" placeholder="Nội dung" aria-label="Số điện thoại"></textarea>
+          <button class="submit-review">Gửi</button>
+        </div>
+      </div>
+      <div class="line-devide-row"></div>
+      <div class="wrap-comment">
+        <h4>Bình luận</h4>
+        
+      </div>
+    </div>
+    <!-- Gio hàng =============================================-->
+    <div class="giohang">
+      <a onclick="showcart()"><img src="/img/cart/cart.png"><span id="countsp">0</span></a>
+    </div>
+
+    <div id="showcart">
+      <table>
+        <tr>
+          <th>STT</th>
+          <th>Hình</th>
+          <th>Tên sản phẩm</th>
+          <th>Đơn giá</th>
+          <th>Số lượng</th>
+          <th>Thành tiền (VNĐ)</th>
+          <th>Xóa</th>
+        </tr>
+        <tbody id="mycart">
+
+        </tbody>
+      </table>
+      <br>
+      <a href="/cart">Thanh toán &rAarr;</a>
+    </div>
+
+  </div>
+
+  <script src="/js/style.js" type="text/javascript"></script>
+  <script>
+    showcountsp();
+  </script>
+
+
+  </div>
+   <!-- Cộng trừ số lượng sản phẩm -->
+  <script>
+    let qtyElement = document.getElementById('qty');
+    let qty = qtyElement.value
+
+    let render = function (qty) {
+      qtyElement.value = qty;
+    }
+
+    // handle plus
+    let handlePlus = function () {
+      qty++
+      render(qty);
+    }
+    // handle subtract
+    let handleSub = function () {
+      if (qty > 1) {
+        qty--
+        render(qty);
+      }
+    } 
+  </script>

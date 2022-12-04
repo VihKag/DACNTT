@@ -1,0 +1,63 @@
+
+<div class="container-item" style="background-color: rgba(233, 233, 233, 0.459) !important; margin: 5px auto auto 10px !important;">
+    <nav class="nav-breadcrumb" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" color="white">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a class="breadcrumb-item" href="/">Trang chủ</a></li>
+        <li class="breadcrumb-item"><a class="breadcrumb-item" href="/collections">Danh mục</a></li>
+      </ol>
+    </nav>
+  </div>
+  <div class="container-item-2" style="display:flex; background-color: rgba(233, 233, 233, 0.459) !important;">
+    <div class="container-left" >
+      <h3 class="label-field"  style="margin-top:10px !important;">Loại sách</h3>
+      <div class="kind-field">
+        <a href="/collections" class="kind-field-link__all">Tất cả</a>
+        <a href="/collections/khoagiao" class="kind-field-link">Sách khoa giáo</a>
+        <a href="/collections/truyen" class="kind-field-link">Truyện tranh</a>
+        <a href="/collections/vanhoc" class="kind-field-link">Văn học</a>
+        <a href="/collections/kinhte" class="kind-field-link">Sách kinh tế</a>
+      </div>
+      <div class="publisher-field" style="margin-top:10px;">
+        <h3 class="label-field">Nhà xuất bản</h3>
+        <div class="kind-field">
+          <a href="/collections/nxbkd" class="kind-field-link">NXB Kim Đồng</a>
+          <a href="/collections/nxbhn" class="kind-field-link">NXB Hà Nội</a>
+          <a href="/collections/nxbtr" class="kind-field-link">NXB Trẻ</a>
+          <a href="/collections/nxbtn" class="kind-field-link">NXB Thanh Niên</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-right">
+      <div class="sort-field" style="display:flex;">
+        <span class="sort-field-tag">Sắp xếp theo:</span>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Mặc định
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#" onclick="fnSortMoney()">Giá tiền</a></li>
+            <li><a class="dropdown-item" href="#" onclick="fnSortAZ()">A-Z</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="wrap-products box-scroll">
+        <div class="products-grid">
+          <div class="grid text-center" style="--bs-columns: 4;">
+            <% books.forEach(function(books){ %>
+              <a href="collections/product"  onclick="fnPageItem('<%= books.img %>','<%= books.tensach %>',
+                '<%= books.giatien %>','<%= books.tacgia %>','<%= books.sotrang %>','<%= books.theloai %>','<%= books.luatuoi %>','<%= books.nxb %>','<%= books._id %>')">
+                <div class="product-inner">
+                    <img src="<%= books.img %>" alt="" class="product-img">
+                    <h4 id="tensach" class="product-name"><%= books.tensach %></h4>
+                    <h4 id="product-price" class="product-price"><%= books.giatien %>đ</h4>
+                  </div>
+              </a>
+            <%}); %>
+          </div>
+        </div>
+        <!-- Thanh chuyển trang -->
+      </div>
+    </div>
+  </div>

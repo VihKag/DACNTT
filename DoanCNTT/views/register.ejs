@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng ký</title>
+    <link href="/css/style.css" rel="stylesheet" type="text/css"> <!-- ./ là cùng cấp-->
+    <link rel="stylesheet" href="fonts/themify-icons/themify-icons.css">
+</head>
+
+<body>
+    <div class="login-form-container">
+        <div class="login-form">
+            <h1 class="bookstore-name">Nhà sách K&V</h1>
+            <form action="/register" method="POST">
+                <div class="login-input-group">
+                    <label for="username">Tên tài khoản:</label>
+                    <input type="text" name="username" required />
+                </div>
+                <div class="login-input-group">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" required />
+                </div>
+                <div class="login-input-group">
+                    <label for="password">Mật khẩu:</label>
+                    <input type="password" name="password" required />
+                </div>
+                <% if(err) { %>
+                    <p style="color: red;">
+                        <%= err %>
+                    </p>
+                    <% } %>
+                        <button class="btn-login btn">Đăng ký</button>
+            </form>
+            <a href="/login">Đã có tài khoản? Đăng nhập ngay</a>
+        </div>
+    </div>
+
+</body>
+
+</html>

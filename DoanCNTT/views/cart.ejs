@@ -1,0 +1,98 @@
+<div class="cart-container">
+    <nav class="nav-breadcrumb" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" color="white">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a class="breadcrumb-item" href="/">Home</a></li>
+            <li class="breadcrumb-item"><a class="breadcrumb-item" href="/collections">Collections</a></li>
+            <li class="breadcrumb-item"><a class="breadcrumb-item" href="#">Item</a></li>
+            <li class="breadcrumb-item"><a class="breadcrumb-item" href="#">Cart</a></li>
+        </ol>
+    </nav>
+
+    <div class="cart-detail-container" style="background: url('/img/cart/cart-bg.jpg'); background-size: 300px;">
+        <div class="body-container">
+            <div class="thongtinnhanhang-container">
+                <h2 style="display: inline;">THÔNG TIN NHẬN HÀNG</h2>
+                <table class="thongtinnhanhang">
+                    <tbody id="thongtinnhanhang">
+                        <tr>
+                            <td>Họ tên</td>
+                            <td><input type="text" name="hoten" class="thongtin-input" required></td>
+                        </tr>
+                        <tr>
+                            <td>Địa chỉ</td>
+                            <td><input type="text" name="diachi" class="thongtin-input" required></td>
+                        </tr>
+                        <tr>
+                            <td>SĐT</td>
+                            <td><input type="text" name="dienthoai" class="thongtin-input" required></td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td><input type="text" name="email" class="thongtin-input" required></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br><h5>Phương thức thanh toán</h5><br>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="custom-control custom-radio image-checkbox">
+                            <input type="radio" class="custom-control-input" id="ck2a" name="ck2">
+                            <label class="custom-control-label" for="ck2a">
+                                <img src="img/cart/ico_momopay.png" alt="#" class="img-fluid" width="60px">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="custom-control custom-radio image-checkbox">
+                            <input type="radio" class="custom-control-input" id="ck2b" name="ck2">
+                            <label class="custom-control-label" for="ck2b">
+                                <img src="img/cart/ico_airpay.png" alt="#" class="img-fluid" width="60px">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="custom-control custom-radio image-checkbox">
+                            <input type="radio" class="custom-control-input" id="ck2c" name="ck2">
+                            <label class="custom-control-label" for="ck2c">
+                                <img src="img/cart/ico_zalopayapp.png" alt="#" class="img-fluid" width="60px">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="custom-control custom-radio image-checkbox">
+                            <input type="radio" class="custom-control-input" id="ck2d" name="ck2">
+                            <label class="custom-control-label" for="ck2d">
+                                <img src="img/cart/ico_zalopayatm.png" alt="#" class="img-fluid" width="60px">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="body-container">
+            <div class="giohang-container">
+                <h2 style="display: inline;">GIỎ HÀNG</h2>
+                <table class="thongtingiohang">
+                    <tr>
+                        <th>STT</th>
+                        <th>Hình</th>
+                        <th>Tên sản phẩm</th>
+                        <th>Đơn giá</th>
+                        <th>Số lượng</th>
+                        <th>Thành tiền (VNĐ)</th>
+                        <th>Xóa</th>
+                    </tr>
+                    <tbody id="mycart"></tbody>
+                </table>
+            </div>
+            <div class="">
+                <button class="btn-thanhtoan" onclick="thanhtoan()">THANH TOÁN</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<script src="js/style.js"></script>
+<script>
+    showmycart();
+</script>

@@ -1,0 +1,129 @@
+<!-- slider -->
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="https://www.fahasa.com/media/wysiwyg/Thang-02-2021/Banner-chinh-1920x500.jpg" class="d-block w-100"
+                alt="img1">
+        </div>
+        <div class="carousel-item">
+            <img src="https://www.fahasa.com/media/wysiwyg/Thang-11-2020/bannerchinh-1920x500.jpg"
+                class="d-block w-100" alt="img2">
+        </div>
+        <div class="carousel-item">
+            <img src="https://www.fahasa.com/media/wysiwyg/Thang-6-2020/SSST_bannerchinh_1920x500.jpg"
+                class="d-block w-100" alt="img3">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<!-- end slider ================================================================================-->
+
+<!-- list product ========================================================================-->   
+<div class="container">
+    <div class="Content">
+        <a href="/collections">Sách văn học</a>
+    </div>
+    <!-- danh mục sản phẩm bán chạy bán chạy ===========================================-->
+    <div class="container-products">
+        <% books.forEach(function(books){ %>
+            <a href="collections/product">
+                <div class="border">
+                    <img src="<%= books.img %>" alt="product">
+                    <h4 id="tensach" class="product-name"><%= books.tensach %></h4>
+                    <h4 class="product-price"><%= books.giatien %>đ</h4>
+                </div>
+            </a>  
+        <%}); %>              
+    </div>  
+
+    <div class="Content">
+        <a href="/">Sách mới</a>
+    </div>
+    <!-- danh mục sản phẩm mới============================================================-->
+    <div class="container-products">
+        <% books.forEach(function(books){ %>
+            <a href="collections/product">
+                <div class="border">
+                    <img src="<%= books.img %>" alt="product">
+                    <h4 id="tensach" class="product-name"><%= books.tensach %></h4>
+                    <h4 class="product-price"><%= books.giatien %>đ</h4>
+                </div>
+            </a>  
+        <%}); %>              
+    </div>   
+    <!-- end container==================================================================-->
+</div>
+
+<!-- banner ========================================================================-->
+<div class="banner">
+    <a href=""><img src="https://theme.hstatic.net/200000343865/1000938429/14/banner_home_pro_5.jpg?v=107" alt="bannner">
+    </a>
+</div>
+
+<!-- list product ========================================================================-->   
+<div class="container">
+    <div class="Content">
+        <a href="/">Sách thiếu nhi</a>
+    </div>
+    <!-- danh mục truyện draemon ===========================================-->
+    <div class="container-products">
+        <% books.forEach(function(books){ %>
+            <a href="collections/product">
+                <div class="border">
+                    <img src="<%= books.img %>" alt="product">
+                    <h4 id="tensach" class="product-name"><%= books.tensach %></h4>
+                    <h4 class="product-price"><%= books.giatien %>đ</h4>
+                </div>
+            </a>  
+        <%}); %>              
+    </div>  
+    <div class="Content">
+        <a href="/">Truyện tranh</a>
+    </div>
+    <!-- danh mục truyện draemon ===========================================-->
+    <div class="container-products">
+        <% books.forEach(function(books){ %>
+            <a href="collections/product">
+                <div class="border">
+                    <img src="<%= books.img %>" alt="product">
+                    <h4 id="tensach" class="product-name"><%= books.tensach %></h4>
+                    <h4 class="product-price"><%= books.giatien %>đ</h4>
+                </div>
+            </a>  
+        <%}); %>              
+    </div>  
+</div>
+
+<!-- banner ========================================================================-->
+<div class="banner">
+    <a href=""><img src="https://sangiaodichno.sbvamc.vn/images/temp/banner.jpg" alt="banner">
+    </a>
+</div>
+
+<!-- list product ========================================================================-->   
+<div class="container">
+    <div class="Content">
+        <a href="/">Kinh tế</a>
+    </div>
+    <!-- danh mục sách kinh tế ===========================================-->
+    <div class="container-products">
+        <% books.forEach(function(books){ %>
+            <a href="collections/product">
+                <div class="border">
+                    <img src="<%= books.img %>" alt="product">
+                    <h4 id="tensach" class="product-name"><%= books.tensach %></h4>
+                    <h4 class="product-price"><%= books.giatien %>đ</h4>
+                </div>
+            </a>  
+        <%}); %>              
+    </div>  
+</div>
